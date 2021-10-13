@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <img src="logo.jpg" height="200" width="180">
+    <h1 class="display-3">gsHUB</h1>
+    <p class="query-text">Don't keep your queries, share them freely!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="query" placeholder="What's your query?">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>
