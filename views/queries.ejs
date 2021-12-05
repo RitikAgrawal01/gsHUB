@@ -1,20 +1,82 @@
 <%- include('partials/header') %>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <img src="logo.jpg" height="200" width="180">
-    <h1 class="display-3">Welcome to gsHUB!</h1>
-
-    <% usersWithQueries.forEach(function(user){ %>
-      <p class="query-text"><%=user.query%></p>
-    <% }) %>
+<%- include('partials/navbar-main') %>
 
 
+<div class="jumbotron">
 
-    <hr>
-    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
-    <a class="btn btn-dark btn-lg" href="/submit" role="button">Submit a Query</a>
+  <div class="container mt-4 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-8">
+        <div class="feed p-2">
+          <div class="bg-white border mt-2">
+            <div>
+              <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="https://i.imgur.com/aoKusnD.jpg" width="45">
+                  <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">Thomson ben</span><span class="text-black-50 time">40 minutes ago</span></div>
+                </div>
+                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+              </div>
+            </div>
+            <div class="p-2 px-3"><span>Share your experience as a Scrum Master/Product Owner/Agile team member and what were your primary responsibilities?</span></div>
+            <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up">&nbsp</i><i class="fa fa-comments" aria-hidden="true">&nbsp</i><i class="fa fa-share"></i></div>
+          </div>
+          <div class="bg-white border mt-2">
+            <div>
+              <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="https://www.liscr.com/sites/default/files/styles/threshold-1382/public/blog_images/Headshot%20-%20Chiang%20Wan%20Ching.jpg?itok=Mr1ohKTL" alt="Photo Of A Business Woman - Professional Woman Png@nicepng.com" width="45">
+                  <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">Christy ashley</span><span class="text-black-50 time">1 hour ago</span></div>
+                </div>
+                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+              </div>
+            </div>
+            <div class="p-2 px-3"><span>Can anyone tell me what’s the difference between Agile methodology and Traditional methodology of Software Development?</span></div>
+            <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up">&nbsp</i><i class="fa fa-comments">&nbsp</i><i class="fa fa-share"></i></div>
+          </div>
+          <div class="bg-white border mt-2">
+            <div>
+              <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="https://i.imgur.com/aoKusnD.jpg" alt="Photo Of A Business Woman - Professional Woman Png@nicepng.com" width="45">
+                  <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">Thomson ben</span><span class="text-black-50 time">3 hours ago</span></div>
+                </div>
+                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+              </div>
+            </div>
+            <div class="p-2 px-3"><span>What is a Sprint Planning Meeting, Sprint Review Meeting and Sprint Retrospective Meeting?</span></div>
+            <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up">&nbsp</i><i class="fa fa-comments">&nbsp</i><i class="fa fa-share"></i></div>
+          </div>
+          <% usersWithQueries.forEach(function(user){ %>
+          <% for(let i=0; i<user.queries.length; i++) { %>
+          <div class="bg-white border mt-2">
+            <div>
+              <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="https://i.imgur.com/aoKusnD.jpg" width="45">
+                  <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">Thomson ben</span><span class="text-black-50 time">40 minutes ago</span></div>
+                </div>
+                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+              </div>
+            </div>
+            <div class="p-2 px-3"><span><%= user.queries[i] %></span></div>
+            <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up"></i><i class="fa fa-comments"></i><i class="fa fa-share"></i></div>
+          </div>
+          <% } %>
+          <% }) %>
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
 
-<%- include('partials/footer') %>
+
+<%- include('partials/navbar-footer') %>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="javascripts/nav-main.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -1,17 +1,17 @@
 <%- include('partials/header') %>
 
 <div class="container">
-  <div class="jumbotron centered">
-    <img src="logo.jpg" height="200" width="180">
-    <h1 class="display-3">gsHUB</h1>
-    <p class="query-text">Don't keep your queries, share them freely!</p>
+  <div class="jumbotron">
+    <h1 style="color:black;">gsHUB</h1>
+    <h2><small class="text-muted">Don't keep your queries, share them freely!</small></h2>
 
     <form action="/submit" method="POST">
 
       <div class="form-group">
-        <input type="text" class="form-control text-center" name="query" placeholder="What's your query?">
+        <textarea class="form-control text-center" name="query" placeholder="What's your query?" rows="5" cols="30"></textarea>
       </div>
       <button type="submit" class="btn btn-dark">Submit</button>
+      <button type="upload" class="btn btn-dark">upload file</button>
     </form>
 
 
